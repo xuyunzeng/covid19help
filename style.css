@@ -31,6 +31,7 @@ footer a {
 .source {
   font-weight: 700;
   font-style: italic;
+  display: block;
 }
 
 .slogan {
@@ -79,7 +80,7 @@ input[type="checkbox"] {
 /* benefits section start */
 .benefits > div {
   border-bottom: black 1px dotted;
-  padding: 20px 0px 20px 0px;
+  padding: 0px 0px 20px 0px;
 }
 
 .benefits-title {
@@ -89,13 +90,17 @@ input[type="checkbox"] {
 .benefits-title-container {
   display: flex;
   align-items: center;
-  padding: 10px 0 10px 0;
+  margin-bottom: 10px;
   background-color: black;
   color: white;
 }
 
 .hidden {
   display: none;
+}
+
+.benefits-yellow-highlight {
+  background-color: yellow;
 }
 
 /* benefits section end */
@@ -135,6 +140,7 @@ input[type="checkbox"] {
   .benefits > div {
     margin-left: 20px;
     border: 1px black solid;
+    height: 100%;
   }
 }
 
