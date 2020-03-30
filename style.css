@@ -7,8 +7,14 @@
 p,
 a,
 h2:not(.benefits-title),
-h3 {
+h3,
+strong {
   margin-bottom: 1rem;
+}
+
+strong {
+  display: block;
+  padding: 0.5rem 0 0.5rem 0;
 }
 
 header,
