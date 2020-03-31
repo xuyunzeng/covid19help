@@ -31,7 +31,6 @@ footer a {
 .source {
   font-weight: 700;
   font-style: italic;
-  display: block;
 }
 
 .slogan {
@@ -104,6 +103,10 @@ input[type="checkbox"] {
 }
 
 /* benefits section end */
+
+.footnote {
+  font-size: 0.8rem;
+}
 
 /* desktop style below */
 
