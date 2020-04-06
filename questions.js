@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const questionArea = document.querySelector(".questions");
-  questionArea.addEventListener("click", e => {
+  questionArea.addEventListener("click", (e) => {
     checkIfInputClicked(e);
   });
 });
@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
 function checkIfInputClicked(e) {
   if (e.target.nodeName == "INPUT" && e.srcElement.value != "bc") {
     let benefitName = e.srcElement.value;
-    revealBenefit(benefitName);
     removeNoChecksElement();
+    revealBenefit(benefitName);
   }
 }
 
@@ -19,6 +19,8 @@ function removeNoChecksElement() {
 
 function revealBenefit(benefitName) {
   let selectorString = `div#${benefitName}`;
-  let elementToToggle = document.querySelector(selectorString);
-  elementToToggle.classList.toggle("hidden");
+  let elementToToggle = document.querySelectorAll(selectorString);
+  for (let index in elementToToggle) {
+    elementToToggle[index].classList.toggle("hidden");
+  }
 }
