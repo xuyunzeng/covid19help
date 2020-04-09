@@ -13,7 +13,11 @@ async function getSpreadsheetData(benefitCards) {
   );
   const json = await response.json();
 
-  updatedTime = json.updated;
+  updatedTime = json.feed.updated.$t;
+  updatedTime = updatedTime.substring(0, updatedTime.indexOf("T"));
+  document.querySelector(
+    "#updated-time"
+  ).textContent = `Updated on: ${updatedTime}`;
   let benefitDetails = {};
   for (let i = 8; i != json.feed.entry.length; i++) {
     //i = 8 because i don't want the header row
@@ -60,6 +64,9 @@ function makeCard(benefitDetails, benefitCards) {
     benefitDetails.type
   )}" class=" hidden benefits-card" id=${lostworkChecker(benefitDetails.type)}>
           <div class="benefits-card-title">${benefitDetails.title}</div>
+          <div class="benefits-card-title">Funds: ${
+            benefitDetails.moneyAmount
+          }</div>
           <div class="benefits-card-type">Type: ${benefitDetails.type}</div>
           <div class="benefits-card-source"> <a href="${undefinedToEmpty(
             benefitDetails.sourceLink
